@@ -1,0 +1,14 @@
+<h1>Paises</h1>
+
+<label for="country">País</label>
+<input type="text" name="country" id="country">
+
+<ul>
+    <li *ngFor="let country of countries">
+        {{ country.name }}
+        <img [src]="country.image_name" alt="Bandeira {{ country.name }}" width="50" height="30" />
+
+    </li>
+</ul>
+
+<img src="src/assets/flags/argentina-flag.png" alt="Argentina" />
