@@ -1,1 +1,3 @@
-# Imagens das bandeiras
+# Criar opções no menu
+    * Vinhos (Todos, Tintos, Brancos, ...)
+    * Paises

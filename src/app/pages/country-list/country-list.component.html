@@ -11,7 +11,7 @@
 
 
 <ul>
-    <li *ngFor="let country of filteredCountries()">
+    <li *ngFor="let country of countries">
         <app-country-card imageUrl="{{country.image_name}}" text="{{country.name}}" />
     </li>
 </ul>
