@@ -37,13 +37,12 @@ export class WineViewService {
       id: 0,
       name: '',
       image_url: '',
-      winery_name: '',
-      region_name: '',
-      country_name: '',
-      country_image_url: '',
+      winery: { id: 0, name: '' },
+      region: { id: 0, name: '' },
+      country: { id: 0, image_url: '', name: '' },
       type: WineType.Tinto,
       vintages: [
-        { varieties_name: [], vintage: 0 }
+        { varieties: [], vintage: 0 }
       ],
     }
 
@@ -60,23 +59,25 @@ export class WineViewService {
       id: wine.id,
       name: wine.name,
       image_url: wine.image_url,
-      winery_name: '',
-      region_name: '',
-      country_name: '',
-      country_image_url: '',
+      winery: { id: 0, name: '' },
+      region: { id: 0, name: '' },
+      country: { id: 0, image_url: '', name: '' },
       type: wine.type,
       vintages: [
-        { varieties_name: [], vintage: 0 }
+        { varieties: [], vintage: 0 }
       ],
     }
 
     this.wineryService.getWineryById(wine.winery_id).subscribe(winery => {
-      wineView.winery_name = winery?.name ?? `Vinícula com id ${wine.winery_id} não cadastrada`
+      wineView.winery.id = winery?.id ?? 0
+      wineView.winery.name = winery?.name ?? `Vinícula com id ${wine.winery_id} não cadastrada`
       this.regionService.getRegionById(winery?.region_id ?? 0).subscribe(region => {
-        wineView.region_name = region?.name ?? `Região com id ${winery?.region_id} não cadastrada`
+        wineView.region.id = region?.id ?? 0
+        wineView.region.name = region?.name ?? `Região com id ${winery?.region_id} não cadastrada`
         this.countryService.getCountryById(region?.country_id ?? 0).subscribe(country => {
-          wineView.country_name = country?.name ?? `País com id ${region?.country_id} não cadastrado`
-          wineView.country_image_url = country?.image_name ?? `País com id ${region?.country_id} não cadastrado`
+          wineView.country.id = country?.id ?? 0
+          wineView.country.name = country?.name ?? `País com id ${region?.country_id} não cadastrado`
+          wineView.country.image_url = country?.image_name ?? `País com id ${region?.country_id} não cadastrado`
         })
       })
     })
@@ -92,12 +93,15 @@ export class WineViewService {
   private describeWineVintages(vintage: WineVintage): VintageView {
     let vintageView: VintageView = {
       vintage: vintage.vintage,
-      varieties_name: []
+      varieties: []
     }
 
     for (let varietyId of vintage.variety_ids) {
       this.varietyService.getVarietyById(varietyId).subscribe(variety => {
-        vintageView.varieties_name.push(variety?.name ?? `Variedade com id ${varietyId} não cadastrada`)
+        vintageView.varieties.push({
+          id: variety?.id ?? 0,
+          name: variety?.name ?? `Variedade com id ${varietyId} não cadastrada`
+        })
       })
     }
 

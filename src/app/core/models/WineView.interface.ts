@@ -5,14 +5,26 @@ export interface WineView {
     name: string;
     image_url: string;
     type: WineType;
-    winery_name: string;
-    region_name: string;
-    country_name: string;
-    country_image_url: string
+    winery: {
+        id: number,
+        name: string
+    };
+    region: {
+        id: number,
+        name: string
+    };
+    country: {
+        id: number,
+        name: string,
+        image_url: string
+    };
     vintages: VintageView[]
 }
 
 export interface VintageView {
     vintage: number
-    varieties_name: string[]
+    varieties: {
+        id: number;
+        name: string;
+    }[]
 }

@@ -6,14 +6,14 @@
     </div>
     <div class="wine-information">
         <div class="name">
-            <h2> {{wineView.winery_name}}</h2>
+            <h2> {{wineView.winery.name}}</h2>
             <h1> {{wineView.name}}</h1>
         </div>
         <div class="location">
             <div class="image-container">
-                <img class="country-flag" [src]="wineView.country_image_url" [alt]="wineView.country_name + 'flag'">
+                <img class="country-flag" [src]="wineView.country.image_url" [alt]="wineView.country.name + 'flag'">
             </div>
-            <p>{{wineView.country_name}}, {{wineView.region_name}}</p>
+            <p>{{wineView.country.name}}, {{wineView.region.name}}</p>
         </div>
     </div>
 </div>

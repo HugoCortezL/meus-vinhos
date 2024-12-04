@@ -32,19 +32,19 @@ export class WineDetailComponent {
     this.breadcrumbs = [
       {
         name: this.wineView?.type ?? '',
-        link: '/paises'
+        link: `/tipos/${this.wineView?.type}`
       },
       {
-        name: this.wineView?.country_name ?? '',
-        link: '/paises'
+        name: this.wineView?.country.name ?? '',
+        link: `/paises/${this.wineView?.country.id}`
       },
       {
-        name: this.wineView?.region_name ?? '',
-        link: '/paises'
+        name: this.wineView?.region.name ?? '',
+        link: `/regioes/${this.wineView?.region.id}`
       },
       {
-        name: this.wineView?.winery_name ?? '',
-        link: '/paises'
+        name: this.wineView?.winery.name ?? '',
+        link: `/viniculas/${this.wineView?.winery.id}`
       },
       {
         name: this.wineView?.name ?? '',
