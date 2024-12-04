@@ -1,0 +1,75 @@
+.wine-card {
+    border: 1px solid #D7D7D7;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    padding: 10px 20px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 4px 0 #D7D7D7;
+    cursor: pointer;
+    position: relative;
+    height: 100%;
+    justify-content: space-between;
+
+    .figures {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 5px;
+
+        .image-container {
+            width: 25px;
+            height: 25px;
+            overflow: hidden;
+            position: relative;
+            border-radius: 60px;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                position: absolute;
+            }
+        }
+        .wine-type{
+            width: 25px;
+            height: 25px;
+            border-radius: 25px;    
+            &.Tinto{
+                background-color: #591232;
+            }
+            &.Branco{
+                background-color: #F8E131;
+            }
+            &.Espumante{
+                background-color: #99CD82;
+            }
+            &.Sobremesa{
+                background-color: #B5662D;
+            }
+            &.Fortificado{
+                background-color: #591232;
+            }
+
+        }
+    }
+
+    .name {
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+    }
+
+    .wine-image {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        img {
+            height: 350px;
+        }
+    }
+}

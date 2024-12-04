@@ -1,22 +1,5 @@
 <ul>
     <li *ngFor="let wine of wines">
-        <p>Id: {{wine.id}}</p>    
-        <p>Name: {{wine.name}}</p>    
-        <p>Type: {{wine.type}}</p>    
-        <p>Winery: {{wine.winery_name}}</p>
-        <p>Region: {{wine.region_name}}</p>    
-        <p>Country: {{wine.country_name}}</p>    
-        <p>Country: {{wine.country_image_url}}</p>    
-        <img [src]="wine.image_url" alt="">
-        <ul>
-            <li *ngFor="let vintage of wine.vintages">
-                <p>{{vintage.vintage}}</p>
-                <ul>
-                    <li *ngFor="let variety of vintage.varieties_name">
-                        <p>{{variety}}</p>
-                    </li>
-                </ul>
-            </li>
-        </ul>
+        <app-wine-card [wine]="wine" />
     </li>
 </ul>

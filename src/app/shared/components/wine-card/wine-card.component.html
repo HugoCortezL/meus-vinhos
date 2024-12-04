@@ -1,0 +1,15 @@
+<div class="wine-card">
+    <div class="figures">
+        <div class="wine-type" [ngClass]="wine.type"></div>
+        <div class="image-container">
+            <img class="country-flag" [src]="wine.country_image_url" [alt]="wine.country_name + 'flag'">
+        </div>
+    </div>
+    <div class="wine-image">
+        <img [src]="wine.image_url" alt="">
+    </div>
+    <div class="name">
+        <p>{{wine.winery_name}}</p>
+        <strong>{{wine.name}}</strong>
+    </div>
+</div>
