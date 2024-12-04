@@ -14,4 +14,24 @@ export const REGIONS = [
         "country_id": 3,
         "name": "Toscana"
     },
+    {
+        "id": 4,
+        "country_id": 2,
+        "name": "Vale de Willamette"
+    },
+    {
+        "id": 5,
+        "country_id": 4,
+        "name": "Vale do Rhône"
+    },
+    {
+        "id": 6,
+        "country_id": 2,
+        "name": "Condado de Sonoma"
+    },
+    {
+        "id": 7,
+        "country_id": 3,
+        "name": "Piemonte"
+    },
 ]
