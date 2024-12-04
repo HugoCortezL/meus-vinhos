@@ -1,8 +1,9 @@
 <header>
-    <div class="menu">
-        <img class="icon-button" src="/assets/icons/icon-burger-menu.svg" alt="menu" title="menu" />
+    <div class="menuButton">
+        <img class="icon-button" src="/assets/icons/icon-burger-menu.svg" alt="menu" title="menu"
+            (click)="isMenuOpen = !isMenuOpen" />
     </div>
-    <div class="logo">
+    <div class=" logo">
         <img class="icon-button" src="/assets/logo.svg" alt="logo" />
     </div>
     <div class="options">
@@ -10,3 +11,14 @@
         <img class="icon-button" src="/assets/icons/icon-winery.svg" alt="adega" title="adega" />
     </div>
 </header>
+
+<div [ngClass]="isMenuOpen ? 'menu open' : 'menu'">
+    <ul>
+        <li *ngFor="let item of menuItens" class="menu-option" [routerLinkActive]="'active'"
+            [routerLinkActiveOptions]="{exact: true}" routerLink="{{item.link}}">
+
+            <img class="icon-button" [src]="item.iconUrl" [alt]="item.alt" />
+            <span>{{item.name}}</span>
+        </li>
+    </ul>
+</div>
