@@ -1,0 +1,53 @@
+h1 {
+    font-weight: normal;
+    margin-bottom: 20px;
+    color: #282828;
+}
+
+.form-group {
+    position: relative;
+
+    img {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        color: red;
+        /* Define a cor principal */
+        fill: red;
+    }
+
+    input[type="text"] {
+        padding-left: 40px;
+    }
+}
+
+ul {
+    margin-top: 20px;
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+@media (max-width: 1200px) {
+    ul {
+        grid-template-columns: repeat(3, 1fr);
+        /* 3 colunas */
+    }
+}
+
+/* Quando a tela for menor que 900px, mostramos 2 itens por linha */
+@media (max-width: 900px) {
+    ul {
+        grid-template-columns: repeat(2, 1fr);
+        /* 2 colunas */
+    }
+}
+
+/* Quando a tela for menor que 600px, mostramos 1 item por linha */
+@media (max-width: 600px) {
+    ul {
+        grid-template-columns: 1fr;
+        /* 1 coluna */
+    }
+}

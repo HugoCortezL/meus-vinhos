@@ -1,14 +1,13 @@
-<h1>Paises</h1>
+<h1>Países</h1>
 
-<label for="country">País</label>
-<input type="text" name="country" id="country">
+<div class="form-group">
+    <img src="/assets/icons/icon-search-gray.svg" alt="buscar"/>
+    <input type="text" name="country" id="country" placeholder="Procure por um país">
+</div>
+
 
 <ul>
     <li *ngFor="let country of countries">
-        {{ country.name }}
-        <img [src]="country.image_name" alt="Bandeira {{ country.name }}" width="50" height="30" />
-
+        <app-country-card imageUrl="{{country.image_name}}" text="{{country.name}}"/>
     </li>
 </ul>
-
-<img src="src/assets/flags/argentina-flag.png" alt="Argentina" />

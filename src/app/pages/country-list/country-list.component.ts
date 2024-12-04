@@ -2,10 +2,11 @@ import { Component } from '@angular/core';
 import { Country } from '../../core/models/Country.interface';
 import { CountryService } from '../../core/services/country.service';
 import { CommonModule } from '@angular/common';
+import { CountryCardComponent } from '../../shared/components/country-card/country-card.component';
 
 @Component({
   selector: 'app-country-list',
-  imports: [CommonModule],
+  imports: [CommonModule, CountryCardComponent],
   templateUrl: './country-list.component.html',
   styleUrl: './country-list.component.scss'
 })

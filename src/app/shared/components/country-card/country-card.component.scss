@@ -1,0 +1,27 @@
+.country-card{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    border: 1px solid #D7D7D7;
+    padding: 15px 10px;
+    cursor: pointer;
+
+    .image-container {
+        width: 60px;
+        height: 60px;
+        overflow: hidden;
+        position: relative;
+        border-radius: 60px;
+    
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+        }
+    }
+    
+    &:hover{
+        background-color: #F8F8F8;
+    }
+}
