@@ -6,6 +6,8 @@ h1 {
 
 .form-group {
     position: relative;
+    display: flex;
+    gap: 10px;
 
     img {
         position: absolute;

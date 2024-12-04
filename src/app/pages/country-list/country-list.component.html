@@ -1,13 +1,17 @@
 <h1>Países</h1>
 
 <div class="form-group">
-    <img src="/assets/icons/icon-search-gray.svg" alt="buscar"/>
-    <input type="text" name="country" id="country" placeholder="Procure por um país">
+    <img src="/assets/icons/icon-search-gray.svg" alt="buscar" />
+    <input type="text" [formControl]="searchControl" name="country" id="country" placeholder="Procure por um país">
+    <select name="sortCountry" id="sortCountry" (change)="onSortCountryChange($event)">
+        <option value="nameAsc">Nome (A-Z)</option>
+        <option value="nameDesc">Nome (Z-A)</option>
+    </select>
 </div>
 
 
 <ul>
-    <li *ngFor="let country of countries">
-        <app-country-card imageUrl="{{country.image_name}}" text="{{country.name}}"/>
+    <li *ngFor="let country of filteredCountries()">
+        <app-country-card imageUrl="{{country.image_name}}" text="{{country.name}}" />
     </li>
 </ul>
