@@ -6,6 +6,7 @@ import { CountryCardComponent } from '../../shared/components/country-card/count
 import { FormControl, ReactiveFormsModule } from '@angular/forms';
 import { debounceTime, distinctUntilChanged } from 'rxjs';
 import { CountryFilter } from '../../core/models/filters/CountryFilter.interface';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-country-list',
@@ -18,7 +19,7 @@ export class CountryListComponent {
   searchControl: FormControl = new FormControl('');
   countryFilter: CountryFilter
 
-  constructor(private countryService: CountryService) {
+  constructor(private countryService: CountryService, private router: Router) {
     this.countryFilter = {
       name: "",
       order: "nameAsc"
@@ -48,5 +49,9 @@ export class CountryListComponent {
     this.countryService.getAllCountries(this.countryFilter).subscribe((data) => {
       this.countries = data;
     });
+  }
+
+  onCountryClick(id: number): void {
+    this.router.navigate([`/paises/${id}`]); // Redireciona para a página do país
   }
 }

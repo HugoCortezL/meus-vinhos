@@ -12,6 +12,6 @@
 
 <ul>
     <li *ngFor="let country of countries">
-        <app-country-card imageUrl="{{country.image_name}}" text="{{country.name}}" />
+        <app-country-card [imageUrl]="country.image_name" [text]="country.name" (click)="onCountryClick(country.id)" />
     </li>
 </ul>
