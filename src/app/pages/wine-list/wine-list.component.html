@@ -1,5 +1,5 @@
 <ul>
     <li *ngFor="let wine of wines">
-        <app-wine-card [wine]="wine" />
+        <app-wine-card [wine]="wine" (click)="onWineClick(wine.id)" />
     </li>
 </ul>

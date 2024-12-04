@@ -51,6 +51,6 @@ export class CountryListComponent {
   }
 
   onCountryClick(id: number): void {
-    this.router.navigate([`/paises/${id}`]); // Redireciona para a página do país
+    this.router.navigate([`/paises/${id}`]);
   }
 }

@@ -55,7 +55,7 @@ export class WineViewService {
     return of(wineView);
   }
 
-  describeWine(wine: Wine): WineView {
+  private describeWine(wine: Wine): WineView {
     let wineView: WineView = {
       id: wine.id,
       name: wine.name,
@@ -89,7 +89,7 @@ export class WineViewService {
 
   }
 
-  describeWineVintages(vintage: WineVintage): VintageView {
+  private describeWineVintages(vintage: WineVintage): VintageView {
     let vintageView: VintageView = {
       vintage: vintage.vintage,
       varieties_name: []
