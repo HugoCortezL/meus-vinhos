@@ -1,3 +1,1 @@
-# Criar opções no menu
-    * Vinhos (Todos, Tintos, Brancos, ...)
-    * Paises
+# Corrigir breadcrumbs do wine-detail

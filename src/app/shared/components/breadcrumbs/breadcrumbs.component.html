@@ -1,0 +1,11 @@
+<div class="breadcrumbs">
+    <ul>
+        <li *ngFor="let crumb of breadcrumbs">
+            <div *ngIf="crumb.link" class="notLast">
+                <a (click)="onCrumbClick(crumb.link)">{{crumb.name}}</a>
+                <img src="/assets/icons/icon-chevron-right.svg" alt="">
+            </div>
+            <a class="last" *ngIf="!crumb.link">{{crumb.name}}</a>
+        </li>
+    </ul>
+</div>
