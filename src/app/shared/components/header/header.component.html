@@ -15,7 +15,7 @@
 <div [ngClass]="isMenuOpen ? 'menu open' : 'menu'">
     <ul>
         <li *ngFor="let item of menuItens" class="menu-option" [routerLinkActive]="'active'"
-            [routerLinkActiveOptions]="{exact: true}" routerLink="{{item.link}}">
+            [routerLinkActiveOptions]="{exact: true}" routerLink="{{item.link}}" (click)="isMenuOpen = !isMenuOpen">
 
             <img class="icon-button" [src]="item.iconUrl" [alt]="item.alt" />
             <span>{{item.name}}</span>

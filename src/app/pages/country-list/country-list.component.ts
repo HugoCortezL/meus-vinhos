@@ -28,7 +28,6 @@ export class CountryListComponent {
 
   ngOnInit(): void {
 
-    // Obtém todos os países
     this.updateCountries()
 
     this.searchControl.valueChanges.pipe(

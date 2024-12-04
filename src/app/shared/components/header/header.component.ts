@@ -14,6 +14,12 @@ export class HeaderComponent {
 
   menuItens = [
     {
+      link: "/vinhos",
+      iconUrl: "/assets/icons/icon-wine.svg",
+      alt: "buscar vinhos",
+      name: "Vinhos"
+    },
+    {
       link: "/paises",
       iconUrl: "/assets/icons/icon-country-search.svg",
       alt: "buscar pais",
